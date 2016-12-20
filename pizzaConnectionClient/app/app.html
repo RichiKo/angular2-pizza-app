@@ -1,6 +1,24 @@
 <html>
-    <head> Pizza shop</head>
-    <body>
-        <h1>Version 0:1 Betta</h1>
-    </body>
+
+<head>
+  <title>Pizza shop</title>
+</head>
+
+<body>
+  <h1>Version 0:1 Betta</h1>
+  <div style="height:50px">
+    <template [ngIf]="showInput" ]>
+      <div>
+        <input id="in" type="text" size="30" [(ngModel)]="text" />
+      </div>
+      {{text}}
+    </template>
+    <div style="height:20px"></div>
+    <div>
+      <button type="button" (click)="toggleInput()" pButton label="Toggle">
+      </button>
+    </div>
+  </div>
+</body>
+
 </html>
