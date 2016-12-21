@@ -10,7 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+//Components
 var app_component_1 = require('./app.component');
+var home_component_1 = require('./home/ts/components/home.component');
+var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component');
 var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
 var app_routes_1 = require('./app.routes');
@@ -26,7 +29,11 @@ var AppModule = (function () {
                 primeng_1.ButtonModule,
                 app_routes_1.routing
             ],
-            declarations: [app_component_1.AppComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                home_component_1.HomeComponent,
+                pizzalist_component_1.PizzaListComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
