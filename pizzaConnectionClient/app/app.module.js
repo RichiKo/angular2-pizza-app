@@ -27,6 +27,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 primeng_1.InputTextModule,
                 primeng_1.ButtonModule,
+                primeng_1.MenubarModule,
                 app_routes_1.routing
             ],
             declarations: [

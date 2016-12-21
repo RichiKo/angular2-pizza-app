@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/primeng';
 
 @Component({
-    selector: 'pizzaconnection',
-    templateUrl: 'app/app.html',
-    styleUrls: []
+  selector: 'pizzaconnection',
+  templateUrl: 'app/app.html',
+  styleUrls: ['app/css/styles.css']
 })
 
-export class AppComponent {
-    private text: string;
-    private showInput: boolean = true;
+export class AppComponent implements OnInit {
+  private items: MenuItem[];
 
-    toggleInput() {
-        this.showInput = !this.showInput;
-    }
+  constructor() { }
+
+  ngOnInit() {
+    this.items = [
+      {
+        label: 'Home',
+        icon: '',
+        routerLink: ['']
+      },
+      {
+        label: 'Speisekarte',
+        icon: 'fa-cutlery',
+        routerLink: ['pizzalist']
+      }
+    ]
+  }
 }
 

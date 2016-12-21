@@ -9,32 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.items = [
-            {
-                label: 'Home',
-                icon: '',
-                routerLink: ['']
-            },
-            {
-                label: 'Speisekarte',
-                icon: 'fa-cutlery',
-                routerLink: ['pizzalist']
-            }
-        ];
-    };
-    AppComponent = __decorate([
+    HomeComponent = __decorate([
         core_1.Component({
-            selector: 'pizzaconnection',
-            templateUrl: 'app/app.html',
-            styleUrls: ['app/css/styles.css']
+            selector: 'home',
+            templateUrl: 'app/home/templates/home.html',
+            styleUrls: []
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

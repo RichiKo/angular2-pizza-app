@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/ts/components/home.component';
 import { PizzaListComponent } from './pizza/ts/components/pizzalist.component';
 import { FormsModule } from '@angular/forms';
-import { InputTextModule, ButtonModule } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, MenubarModule } from 'primeng/primeng';
 import { routing } from './app.routes';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { routing } from './app.routes';
         FormsModule,
         InputTextModule,
         ButtonModule,
+        MenubarModule,
         routing
     ],
     declarations: [

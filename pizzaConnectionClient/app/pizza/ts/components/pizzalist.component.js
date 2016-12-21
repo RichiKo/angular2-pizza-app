@@ -9,32 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var PizzaListComponent = (function () {
+    function PizzaListComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.items = [
-            {
-                label: 'Home',
-                icon: '',
-                routerLink: ['']
-            },
-            {
-                label: 'Speisekarte',
-                icon: 'fa-cutlery',
-                routerLink: ['pizzalist']
-            }
-        ];
-    };
-    AppComponent = __decorate([
+    PizzaListComponent = __decorate([
         core_1.Component({
-            selector: 'pizzaconnection',
-            templateUrl: 'app/app.html',
-            styleUrls: ['app/css/styles.css']
+            selector: 'pizzalist',
+            templateUrl: 'app/pizza/templates/pizzalist.html',
+            styleUrls: []
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PizzaListComponent);
+    return PizzaListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PizzaListComponent = PizzaListComponent;
+//# sourceMappingURL=pizzalist.component.js.map
