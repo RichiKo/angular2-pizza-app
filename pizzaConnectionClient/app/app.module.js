@@ -18,6 +18,8 @@ var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component')
 var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
 var app_routes_1 = require('./app.routes');
+//Servises
+var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +39,9 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 pizzalist_component_1.PizzaListComponent
             ],
-            providers: [],
+            providers: [
+                pizzalist_service_1.PizzaListService
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

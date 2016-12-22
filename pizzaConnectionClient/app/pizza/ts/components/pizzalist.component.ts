@@ -5,14 +5,14 @@ import { Pizza } from '../models/pizza.model';
 @Component({
   selector: 'pizzalist',
   templateUrl: 'app/pizza/templates/pizzalist.html',
-  styleUrls: ['app/css/style.css']
+  styleUrls: ['app/css/styles.css']
 })
 
 export class PizzaListComponent {
   private pizzaList: Array<Pizza>
 
-  constructor(private pizzaService: PizzaListService) {
-    this.pizzaService.getPizzaList().subscribe(res => {
+  constructor(private _pizzaService: PizzaListService) {
+    this._pizzaService.getPizzaList().subscribe(res => {
       this.pizzaList = res;
     });
   }

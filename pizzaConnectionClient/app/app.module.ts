@@ -29,7 +29,7 @@ import { PizzaListService } from './pizza/ts/services/pizzalist.service';
         PizzaListComponent
     ],
     providers: [
-
+        PizzaListService
     ],
     bootstrap: [AppComponent]
 })

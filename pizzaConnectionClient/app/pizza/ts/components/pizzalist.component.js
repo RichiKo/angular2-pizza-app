@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var pizzalist_service_1 = require('../services/pizzalist.service');
 var PizzaListComponent = (function () {
-    function PizzaListComponent(pizzaService) {
+    function PizzaListComponent(_pizzaService) {
         var _this = this;
-        this.pizzaService = pizzaService;
-        this.pizzaService.getPizzaList().subscribe(function (res) {
+        this._pizzaService = _pizzaService;
+        this._pizzaService.getPizzaList().subscribe(function (res) {
             _this.pizzaList = res;
         });
     }
@@ -25,7 +25,7 @@ var PizzaListComponent = (function () {
         core_1.Component({
             selector: 'pizzalist',
             templateUrl: 'app/pizza/templates/pizzalist.html',
-            styleUrls: ['app/css/style.css']
+            styleUrls: ['app/css/styles.css']
         }), 
         __metadata('design:paramtypes', [pizzalist_service_1.PizzaListService])
     ], PizzaListComponent);
