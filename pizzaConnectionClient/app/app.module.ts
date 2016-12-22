@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 //Components
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ import { routing } from './app.routes';
         InputTextModule,
         ButtonModule,
         MenubarModule,
-        routing
+        routing,
+        HttpModule
     ],
     declarations: [
         AppComponent,

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var http_1 = require('@angular/http');
 //Components
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home/ts/components/home.component');
@@ -28,7 +29,8 @@ var AppModule = (function () {
                 primeng_1.InputTextModule,
                 primeng_1.ButtonModule,
                 primeng_1.MenubarModule,
-                app_routes_1.routing
+                app_routes_1.routing,
+                http_1.HttpModule
             ],
             declarations: [
                 app_component_1.AppComponent,
