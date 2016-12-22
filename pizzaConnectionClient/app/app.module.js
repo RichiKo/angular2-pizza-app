@@ -37,6 +37,7 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 pizzalist_component_1.PizzaListComponent
             ],
+            providers: [],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

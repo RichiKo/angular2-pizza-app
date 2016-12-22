@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule, ButtonModule, MenubarModule } from 'primeng/primeng';
 import { routing } from './app.routes';
 
+//Servises
+import { PizzaListService } from './pizza/ts/services/pizzalist.service';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -24,6 +27,9 @@ import { routing } from './app.routes';
         AppComponent,
         HomeComponent,
         PizzaListComponent
+    ],
+    providers: [
+
     ],
     bootstrap: [AppComponent]
 })
