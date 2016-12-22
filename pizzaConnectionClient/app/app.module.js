@@ -32,7 +32,9 @@ var AppModule = (function () {
                 primeng_1.ButtonModule,
                 primeng_1.MenubarModule,
                 app_routes_1.routing,
-                http_1.HttpModule
+                http_1.HttpModule,
+                primeng_1.DataGridModule,
+                primeng_1.PanelModule
             ],
             declarations: [
                 app_component_1.AppComponent,
