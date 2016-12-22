@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Pizza } from '../models/pizza.model';
+import { endpointUrl } from '../../../consts';
 
 @Injectable()
 export class PizzaListService {
@@ -10,7 +11,7 @@ export class PizzaListService {
 
   }
   getPizzaList(): Observable<Array<Pizza>> {
-    let endpoint_url: string = 'http://54.160.8.62:8080/http/';
+    let endpoint_url: string = endpointUrl + 'pizzalist';
     return this.http
       .get(endpoint_url, { method: 'Get' })
       .map((responseData) => {
