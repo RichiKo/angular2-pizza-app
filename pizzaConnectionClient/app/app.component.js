@@ -15,14 +15,9 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         this.items = [
             {
-                label: 'Home',
-                icon: '',
-                routerLink: ['']
-            },
-            {
                 label: 'Speisekarte',
                 icon: 'fa-cutlery',
-                routerLink: ['pizzalist']
+                routerLink: ['']
             }
         ];
     };

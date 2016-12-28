@@ -10,7 +10,7 @@
               <b>{{pizza.price}} Euro</b>
             </div>
           </div>
-          <img class="cursor_hand" src="../images/pizza/{{pizza.image}}" />
+          <img class="cursor_hand" src="../images/pizza/{{pizza.image}}" (click)="showDetails(pizza)" />
           <div>{{pizza.price}} Euro</div>
           <hr class="ui-widget-content border-top-0">
         </div>

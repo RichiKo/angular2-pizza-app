@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-
-//Components
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/ts/components/home.component';
-import { PizzaListComponent } from './pizza/ts/components/pizzalist.component';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule, ButtonModule, MenubarModule, DataGridModule, PanelModule } from 'primeng/primeng';
 import { routing } from './app.routes';
 
+//Components
+import { AppComponent } from './app.component';
+import { PizzaListComponent } from './pizza/ts/components/pizzalist.component';
+import { PizzaDetailComponent } from './pizza/ts/components/pizzadetail.component';
+
 //Servises
 import { PizzaListService } from './pizza/ts/services/pizzalist.service';
+import { PizzaDetailService } from './pizza/ts/services/pizzadetail.service';
+
 
 @NgModule({
     imports: [
@@ -27,11 +29,12 @@ import { PizzaListService } from './pizza/ts/services/pizzalist.service';
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
-        PizzaListComponent
+        PizzaListComponent,
+        PizzaDetailComponent
     ],
     providers: [
-        PizzaListService
+        PizzaListService,
+        PizzaDetailService
     ],
     bootstrap: [AppComponent]
 })

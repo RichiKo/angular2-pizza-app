@@ -11,15 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
-//Components
-var app_component_1 = require('./app.component');
-var home_component_1 = require('./home/ts/components/home.component');
-var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component');
 var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
 var app_routes_1 = require('./app.routes');
+//Components
+var app_component_1 = require('./app.component');
+var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component');
+var pizzadetail_component_1 = require('./pizza/ts/components/pizzadetail.component');
 //Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
+var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,11 +39,12 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                pizzalist_component_1.PizzaListComponent
+                pizzalist_component_1.PizzaListComponent,
+                pizzadetail_component_1.PizzaDetailComponent
             ],
             providers: [
-                pizzalist_service_1.PizzaListService
+                pizzalist_service_1.PizzaListService,
+                pizzadetail_service_1.PizzaDetailService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

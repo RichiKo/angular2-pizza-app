@@ -9,11 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var pizzalist_service_1 = require('../services/pizzalist.service');
 var PizzaListComponent = (function () {
-    function PizzaListComponent(_pizzaService) {
+    function PizzaListComponent(_pizzaService, router) {
         var _this = this;
         this._pizzaService = _pizzaService;
+        this.router = router;
         this._pizzaService.getPizzaList().subscribe(function (res) {
             _this.pizzaList = res;
         });
@@ -21,13 +23,16 @@ var PizzaListComponent = (function () {
     PizzaListComponent.prototype.getPizzaList = function () {
         return this.pizzaList;
     };
+    PizzaListComponent.prototype.showDetails = function (pizza) {
+        this.router.navigate(['pizzadetail', pizza.id]);
+    };
     PizzaListComponent = __decorate([
         core_1.Component({
             selector: 'pizzalist',
             templateUrl: 'app/pizza/templates/pizzalist.html',
             styleUrls: ['app/css/styles.css']
         }), 
-        __metadata('design:paramtypes', [pizzalist_service_1.PizzaListService])
+        __metadata('design:paramtypes', [pizzalist_service_1.PizzaListService, router_1.Router])
     ], PizzaListComponent);
     return PizzaListComponent;
 }());
