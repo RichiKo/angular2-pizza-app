@@ -3,6 +3,8 @@ import { PizzaDetail } from '../models/pizzadetail.model';
 import { PizzaDetailService } from '../services/pizzadetail.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Cart } from '../../../cart/ts/models/cart.model';
+import { CartItem } from '../../../cart/ts/models/cartitem.model';
 
 @Component({
   selector: 'pizzadetail',
@@ -13,7 +15,7 @@ import { Location } from '@angular/common';
 export class PizzaDetailComponent {
   private _pizzaDetail: PizzaDetail;
 
-  constructor(private pizzaDetailService: PizzaDetailService, private route: ActivatedRoute, private location: Location) {
+  constructor(private pizzaDetailService: PizzaDetailService, private route: ActivatedRoute, private location: Location, private cart: Cart) {
 
     let id = this.route.snapshot.params['id'];
 
@@ -26,7 +28,17 @@ export class PizzaDetailComponent {
   }
 
   addToCart(pizzaDetail: PizzaDetail) {
-    console.log('Eine Pizza wurde in den Warenkorb gelegt: ' + pizzaDetail.name);
+    this.cart.addItem(new CartItem(pizzaDetail.id, pizzaDetail.price, pizzaDetail.image, pizzaDetail.size, pizzaDetail.name));
+  }
+
+  get currentAmount(): number {
+    let currentAmount = 0;
+    this.cart.content.forEach((currentItem, index) => {
+      if (currentItem.pizzaId === this._pizzaDetail.id) {
+        currentAmount = this.cart.content[index].amount;
+      }
+    });
+    return currentAmount;
   }
 
   historyBack() {

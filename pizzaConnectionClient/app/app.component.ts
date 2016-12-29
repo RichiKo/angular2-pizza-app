@@ -18,8 +18,13 @@ export class AppComponent implements OnInit {
         label: 'Speisekarte',
         icon: 'fa-cutlery',
         routerLink: ['']
+      },
+      {
+        label: 'Warenkorb',
+        icon: '',
+        routerLink: ['cart']
       }
-    ]
+    ];
   }
 }
 

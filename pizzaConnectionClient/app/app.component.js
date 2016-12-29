@@ -18,6 +18,11 @@ var AppComponent = (function () {
                 label: 'Speisekarte',
                 icon: 'fa-cutlery',
                 routerLink: ['']
+            },
+            {
+                label: 'Warenkorb',
+                icon: '',
+                routerLink: ['cart']
             }
         ];
     };

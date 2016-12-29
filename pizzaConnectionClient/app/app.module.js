@@ -14,13 +14,18 @@ var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
 var app_routes_1 = require('./app.routes');
-//Components
+// Components
 var app_component_1 = require('./app.component');
 var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component');
 var pizzadetail_component_1 = require('./pizza/ts/components/pizzadetail.component');
-//Servises
+var cart_component_1 = require('./cart/ts/components/cart.component');
+var checkout_component_1 = require('./checkout/ts/components/checkout.component');
+// Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
+var checkout_service_1 = require('./checkout/ts/services/checkout.service');
+// ModelImpl
+var cart_model_1 = require('./cart/ts/models/cart.model');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,16 +40,21 @@ var AppModule = (function () {
                 app_routes_1.routing,
                 http_1.HttpModule,
                 primeng_1.DataGridModule,
-                primeng_1.PanelModule
+                primeng_1.PanelModule,
+                primeng_1.DataListModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 pizzalist_component_1.PizzaListComponent,
-                pizzadetail_component_1.PizzaDetailComponent
+                pizzadetail_component_1.PizzaDetailComponent,
+                cart_component_1.CartComponent,
+                checkout_component_1.CheckoutComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,
-                pizzadetail_service_1.PizzaDetailService
+                pizzadetail_service_1.PizzaDetailService,
+                checkout_service_1.CheckoutService,
+                cart_model_1.Cart
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
