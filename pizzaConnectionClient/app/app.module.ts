@@ -11,6 +11,7 @@ import { PizzaListComponent } from './pizza/ts/components/pizzalist.component';
 import { PizzaDetailComponent } from './pizza/ts/components/pizzadetail.component';
 import { CartComponent } from './cart/ts/components/cart.component';
 import { CheckoutComponent } from './checkout/ts/components/checkout.component';
+import { OrderOptionComponent } from './order-option/ts/components/order-option.component';
 
 // Servises
 import { PizzaListService } from './pizza/ts/services/pizzalist.service';
@@ -40,7 +41,8 @@ import { Cart } from './cart/ts/models/cart.model';
         PizzaListComponent,
         PizzaDetailComponent,
         CartComponent,
-        CheckoutComponent
+        CheckoutComponent,
+        OrderOptionComponent
     ],
     providers: [
         PizzaListService,

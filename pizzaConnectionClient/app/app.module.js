@@ -20,6 +20,7 @@ var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component')
 var pizzadetail_component_1 = require('./pizza/ts/components/pizzadetail.component');
 var cart_component_1 = require('./cart/ts/components/cart.component');
 var checkout_component_1 = require('./checkout/ts/components/checkout.component');
+var order_option_component_1 = require('./order-option/ts/components/order-option.component');
 // Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
@@ -48,7 +49,8 @@ var AppModule = (function () {
                 pizzalist_component_1.PizzaListComponent,
                 pizzadetail_component_1.PizzaDetailComponent,
                 cart_component_1.CartComponent,
-                checkout_component_1.CheckoutComponent
+                checkout_component_1.CheckoutComponent,
+                order_option_component_1.OrderOptionComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,

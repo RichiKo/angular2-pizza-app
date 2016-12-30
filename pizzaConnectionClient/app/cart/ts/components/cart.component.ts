@@ -16,12 +16,13 @@ export class CartComponent {
   }
 
   checkout() {
-    this.checkoutService.checkout().subscribe(res => {
-      console.log('checkout:' + res.statusCode);
-    });
+    // this.checkoutService.checkout().subscribe(res => {
+    //   console.log('checkout:' + res.statusCode);
+    // });
 
-    this.cart.flush();
-    this.router.navigate(['checkout']);
+    // this.cart.flush();
+    this.router.navigate(['orderoption']);
+
   }
 
   get sumTotal(): number {

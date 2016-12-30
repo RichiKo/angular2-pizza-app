@@ -19,11 +19,11 @@ var CartComponent = (function () {
         this.checkoutService = checkoutService;
     }
     CartComponent.prototype.checkout = function () {
-        this.checkoutService.checkout().subscribe(function (res) {
-            console.log('checkout:' + res.statusCode);
-        });
-        this.cart.flush();
-        this.router.navigate(['checkout']);
+        // this.checkoutService.checkout().subscribe(res => {
+        //   console.log('checkout:' + res.statusCode);
+        // });
+        // this.cart.flush();
+        this.router.navigate(['orderoption']);
     };
     Object.defineProperty(CartComponent.prototype, "sumTotal", {
         get: function () {
