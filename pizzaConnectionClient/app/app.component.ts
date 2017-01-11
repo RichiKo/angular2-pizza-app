@@ -10,7 +10,9 @@ import { MenuItem } from 'primeng/primeng';
 export class AppComponent implements OnInit {
   private items: MenuItem[];
 
-  constructor() { }
+  constructor() { 
+    localStorage.removeItem('auth_token');
+  }
 
   ngOnInit() {
     this.items = [

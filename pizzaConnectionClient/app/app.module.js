@@ -21,12 +21,15 @@ var pizzadetail_component_1 = require('./pizza/ts/components/pizzadetail.compone
 var cart_component_1 = require('./cart/ts/components/cart.component');
 var checkout_component_1 = require('./checkout/ts/components/checkout.component');
 var order_option_component_1 = require('./order-option/ts/components/order-option.component');
+var login_component_1 = require('./login/ts/components/login.component');
 // Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
 var checkout_service_1 = require('./checkout/ts/services/checkout.service');
+var auth_service_1 = require('./login/ts/services/auth.service');
 // ModelImpl
 var cart_model_1 = require('./cart/ts/models/cart.model');
+var account_model_1 = require('./login/ts/models/account.model');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,7 +45,8 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 primeng_1.DataGridModule,
                 primeng_1.PanelModule,
-                primeng_1.DataListModule
+                primeng_1.DataListModule,
+                primeng_1.GrowlModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -50,13 +54,16 @@ var AppModule = (function () {
                 pizzadetail_component_1.PizzaDetailComponent,
                 cart_component_1.CartComponent,
                 checkout_component_1.CheckoutComponent,
-                order_option_component_1.OrderOptionComponent
+                order_option_component_1.OrderOptionComponent,
+                login_component_1.LoginComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,
                 pizzadetail_service_1.PizzaDetailService,
                 checkout_service_1.CheckoutService,
-                cart_model_1.Cart
+                auth_service_1.AuthService,
+                cart_model_1.Cart,
+                account_model_1.Account
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
