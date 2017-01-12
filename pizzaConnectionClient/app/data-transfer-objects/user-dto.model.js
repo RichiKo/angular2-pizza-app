@@ -13,6 +13,9 @@ var UserDto = (function () {
         this._password = _password;
         this._authToken = new auth_token_model_1.AuthToken(success, token);
     }
+    UserDto.fromJson = function (data) {
+        return new UserDto(data._id, data._salutation, data._firstName, data._lastName, data._streetName, data._zipCode, data._cityName, data._userName, data._password, data.authToken.success, data.authToken.token);
+    };
     Object.defineProperty(UserDto.prototype, "id", {
         get: function () {
             return this._id;
@@ -113,9 +116,6 @@ var UserDto = (function () {
         enumerable: true,
         configurable: true
     });
-    UserDto.fromJson = function (data) {
-        return new UserDto(data._id, data._salutation, data._firstName, data._lastName, data._streetName, data._zipCode, data._cityName, data._userName, data._password, data.authToken.success, data.authToken.token);
-    };
     return UserDto;
 }());
 exports.UserDto = UserDto;

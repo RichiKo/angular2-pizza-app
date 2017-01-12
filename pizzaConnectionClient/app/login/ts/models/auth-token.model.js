@@ -4,6 +4,9 @@ var AuthToken = (function () {
         this._success = _success;
         this._token = _token;
     }
+    AuthToken.fromJson = function (data) {
+        return new AuthToken(data.succes, data.token);
+    };
     Object.defineProperty(AuthToken.prototype, "success", {
         get: function () {
             return this._success;
@@ -24,9 +27,6 @@ var AuthToken = (function () {
         enumerable: true,
         configurable: true
     });
-    AuthToken.fromJson = function (data) {
-        return new AuthToken(data.succes, data.token);
-    };
     return AuthToken;
 }());
 exports.AuthToken = AuthToken;

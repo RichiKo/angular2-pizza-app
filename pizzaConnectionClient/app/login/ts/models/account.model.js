@@ -21,17 +21,17 @@ var Account = (function () {
     };
     Account.prototype.flush = function () {
         this._id = -1;
-        this._salutation = "";
-        this._firstName = "";
-        this._lastName = "";
-        this._streetName = "";
-        this._zipCode = "";
-        this._cityName = "";
-        this._userName = "";
-        this._password = "";
+        this._salutation = '';
+        this._firstName = '';
+        this._lastName = '';
+        this._streetName = '';
+        this._zipCode = '';
+        this._cityName = '';
+        this._userName = '';
+        this._password = '';
     };
     Account.prototype.isEmpty = function (value) {
-        return (!value || value.trim().length == 0);
+        return (!value || value.trim().length === 0);
     };
     Object.defineProperty(Account.prototype, "id", {
         get: function () {

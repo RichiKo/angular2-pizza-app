@@ -18,7 +18,7 @@ var AuthService = (function () {
         this.http = http;
     }
     AuthService.prototype.login = function (email, passwd) {
-        console.log("Try to login with Email: " + email + " AND password: " + passwd);
+        console.log('Try to login with Email: ' + email + ' AND password: ' + passwd);
         var endpoint_url = consts_1.endpointUrl + 'login';
         var userAuthDto = new user_auth_dto_model_1.UserAuthDto(email, passwd);
         var body = JSON.stringify(userAuthDto);
@@ -30,7 +30,7 @@ var AuthService = (function () {
             .do(function (res) {
             if (res.authToken.success) {
                 localStorage.setItem('auth_token', res._authToken.token);
-                console.log("Login erfolgreich: this.loggedIn =" + res._authToken.success);
+                console.log('Login erfolgreich: this.loggedIn =' + res._authToken.success);
             }
         });
     };

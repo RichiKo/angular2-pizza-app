@@ -1,24 +1,26 @@
 export class AuthToken {
-    constructor(private _success:boolean, private _token:string) {
-    }
 
-    get success():boolean {
-        return this._success;
-    }
+  public static fromJson(data: any): AuthToken {
+    return new AuthToken(data.succes, data.token);
+  }
 
-    get token():string {
-        return this._token;
-    }
+  constructor(private _success: boolean, private _token: string) {
+  }
 
-    set success(value:boolean) {
-      this._success = value;
-    }
+  get success(): boolean {
+    return this._success;
+  }
 
-    set token(value:string) {
-      this._token = value;
-    }
+  get token(): string {
+    return this._token;
+  }
 
-    public static fromJson(data:any):AuthToken {
-      return new AuthToken (data.succes, data.token);
-    }
+  set success(value: boolean) {
+    this._success = value;
+  }
+
+  set token(value: string) {
+    this._token = value;
+  }
 }
+

@@ -11,7 +11,7 @@ import { Pizza } from '../models/pizza.model';
 })
 
 export class PizzaListComponent {
-  private pizzaList: Array<Pizza>
+  private pizzaList: Array<Pizza>;
 
   constructor(private _pizzaService: PizzaListService, private router: Router) {
     this._pizzaService.getPizzaList().subscribe(res => {
