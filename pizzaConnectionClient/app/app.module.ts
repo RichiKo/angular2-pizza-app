@@ -63,3 +63,30 @@ import { Account } from './login/ts/models/account.model';
 export class AppModule {
 
 }
+
+
+
+
+
+// // Place your settings in this file to overwrite the default settings
+// {
+//   "editor.fontSize": 0,
+//   "editor.tabSize": 2,
+//   "editor.formatOnSave": true,
+//   "editor.renderWhitespace": "boundary",
+//   "files.exclude": {
+//     "**/.git": true,
+//     "**/.DS_Store": true,
+//     "**/*.js.map": true,
+//     "**/*.js": {
+//       "when": "$(basename).ts"
+//     }
+//   },
+//   // Controls whether the editor should render indent guides
+//   "editor.renderIndentGuides": true,
+//   // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
+//   "editor.tabCompletion": true,
+//   "typescript.tsdk": "/home/rkolyadko/.nvm/versions/node/v4.4.6/lib/node_modules/typescript/lib",
+//   "files.autoSave": "afterDelay",
+//   "window.zoomLevel": 0
+// }

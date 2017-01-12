@@ -175,3 +175,8 @@ body {
 #button { display: inline-block; height: 43px; width: 100px;}
 #minibutton { display: inline-block; height: 20px; width: 20px;}
 #longbutton { display: inline-block; height: 30px; width: 300px;}
+
+span.ui-button-icon-only .fa {
+    left: 50%;
+    margin-left: -12px;
+}
