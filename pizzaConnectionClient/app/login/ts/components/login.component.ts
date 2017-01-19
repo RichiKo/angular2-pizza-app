@@ -23,7 +23,7 @@ export class LoginComponent {
     console.log('Trying to login with user' + this.email);
     this.authService.login(this.email, this.passwd)
       .subscribe((result) => {
-        if(result.authToken.success === true) {
+        if (result.authToken.success === true) {
           this.account.id = result.id;
           this.account.salutation = result.salutation;
           this.account.firstName = result.firstName;
@@ -35,8 +35,8 @@ export class LoginComponent {
           this.router.navigate(['confirmation']);
         } else {
           this.msgs.push({
-            severity:'error',
-            summary:'Fehler!',
+            severity: 'error',
+            summary: 'Fehler!',
             detail: 'Sie konnten nicht angemeldet werden'
           });
         }

@@ -22,6 +22,7 @@ var cart_component_1 = require('./cart/ts/components/cart.component');
 var checkout_component_1 = require('./checkout/ts/components/checkout.component');
 var order_option_component_1 = require('./order-option/ts/components/order-option.component');
 var login_component_1 = require('./login/ts/components/login.component');
+var confirmation_component_1 = require('./confirmation/ts/components/confirmation.component');
 // Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
@@ -46,7 +47,8 @@ var AppModule = (function () {
                 primeng_1.DataGridModule,
                 primeng_1.PanelModule,
                 primeng_1.DataListModule,
-                primeng_1.GrowlModule
+                primeng_1.GrowlModule,
+                primeng_1.DataTableModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -55,7 +57,8 @@ var AppModule = (function () {
                 cart_component_1.CartComponent,
                 checkout_component_1.CheckoutComponent,
                 order_option_component_1.OrderOptionComponent,
-                login_component_1.LoginComponent
+                login_component_1.LoginComponent,
+                confirmation_component_1.ConfirmationComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,
@@ -72,26 +75,4 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
-// // Place your settings in this file to overwrite the default settings
-// {
-//   "editor.fontSize": 0,
-//   "editor.tabSize": 2,
-//   "editor.formatOnSave": true,
-//   "editor.renderWhitespace": "boundary",
-//   "files.exclude": {
-//     "**/.git": true,
-//     "**/.DS_Store": true,
-//     "**/*.js.map": true,
-//     "**/*.js": {
-//       "when": "$(basename).ts"
-//     }
-//   },
-//   // Controls whether the editor should render indent guides
-//   "editor.renderIndentGuides": true,
-//   // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
-//   "editor.tabCompletion": true,
-//   "typescript.tsdk": "/home/rkolyadko/.nvm/versions/node/v4.4.6/lib/node_modules/typescript/lib",
-//   "files.autoSave": "afterDelay",
-//   "window.zoomLevel": 0
-// } 
 //# sourceMappingURL=app.module.js.map

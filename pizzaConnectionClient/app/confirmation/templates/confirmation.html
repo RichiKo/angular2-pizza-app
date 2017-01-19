@@ -1,0 +1,46 @@
+<p-growl [value]="msgs"></p-growl>
+<p-panel header="Bitte bestätigen Sie Ihre Bestellung">
+  <div>
+    <template [ngIf]=loggedIn>
+      <h3>Lieferadresse (Kundennummer: {{account.id}})</h3>
+    </template>
+    <template [ngIf]="!loggedIn">
+      <h3>Lieferadresse (Bestellung als Gast)</h3>
+    </template>
+    <table class="width-80-prt">
+      <tr>
+        <td>{{account.salutation}}</td>
+      </tr>
+      <tr>
+        <td>{{account.firstName}} {{account.lastName}}</td>
+      </tr>
+      <tr>
+        <td>{{account.streetName}}</td>
+      </tr>
+      <tr>
+        <td>{{account.zipCode}} {{account.cityName}}</td>
+      </tr>
+      <tr>
+        <td class="height50"></td>
+      </tr>
+    </table>
+    <div class="rightAligned">
+      <p-dataTable [value]="cart.content">
+        <p-column field="name" header="Name"></p-column>
+        <p-column field="size" header="Größe"></p-column>
+        <p-column field="price" header="Einzelpreis EUR"></p-column>
+        <p-column field="amount" header="Anzahl"></p-column>
+        <p-column field="subTotal" header="Zwishensumme EUR"></p-column>
+      </p-dataTable>
+    </div>
+    <div id="fLeft" class="paddingTop-15">
+      <button type="button" (click)="checkout()" pButton label="Bestellung abschließen"></button>
+    </div>
+    <div id="fRight" class="rightAligned">
+      <br>
+      <b>Gesamtsumme: {{cart.sumTotal}} EUR</b>
+      <br>
+      <small> inkl. 7% MwSt & Lieferung</small>
+    </div>
+  </div>
+</p-panel>

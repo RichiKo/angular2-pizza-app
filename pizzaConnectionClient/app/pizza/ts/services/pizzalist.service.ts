@@ -11,7 +11,7 @@ export class PizzaListService {
 
   }
   getPizzaList(): Observable<Array<Pizza>> {
-    let endpoint_url: string = endpointUrl + 'pizzalist';
+    let endpoint_url: string = endpointUrl + 'pizzalist'
     return this.http
       .get(endpoint_url, { method: 'Get' })
       .map((responseData) => {
