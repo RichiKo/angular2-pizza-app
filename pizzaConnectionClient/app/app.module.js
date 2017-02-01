@@ -23,11 +23,13 @@ var checkout_component_1 = require('./checkout/ts/components/checkout.component'
 var order_option_component_1 = require('./order-option/ts/components/order-option.component');
 var login_component_1 = require('./login/ts/components/login.component');
 var confirmation_component_1 = require('./confirmation/ts/components/confirmation.component');
+var account_creator_component_1 = require('./account-creator/ts/components/account-creator.component');
 // Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
 var checkout_service_1 = require('./checkout/ts/services/checkout.service');
 var auth_service_1 = require('./login/ts/services/auth.service');
+var account_creator_service_1 = require('./account-creator/ts/services/account-creator.service');
 // ModelImpl
 var cart_model_1 = require('./cart/ts/models/cart.model');
 var account_model_1 = require('./login/ts/models/account.model');
@@ -48,7 +50,8 @@ var AppModule = (function () {
                 primeng_1.PanelModule,
                 primeng_1.DataListModule,
                 primeng_1.GrowlModule,
-                primeng_1.DataTableModule
+                primeng_1.DataTableModule,
+                primeng_1.DropdownModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -58,13 +61,15 @@ var AppModule = (function () {
                 checkout_component_1.CheckoutComponent,
                 order_option_component_1.OrderOptionComponent,
                 login_component_1.LoginComponent,
-                confirmation_component_1.ConfirmationComponent
+                confirmation_component_1.ConfirmationComponent,
+                account_creator_component_1.AccountCreatorComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,
                 pizzadetail_service_1.PizzaDetailService,
                 checkout_service_1.CheckoutService,
                 auth_service_1.AuthService,
+                account_creator_service_1.AccountCreatorService,
                 cart_model_1.Cart,
                 account_model_1.Account
             ],
@@ -75,4 +80,5 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+// TO-DO find Fehler bei createAccout  
 //# sourceMappingURL=app.module.js.map

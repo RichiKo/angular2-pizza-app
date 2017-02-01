@@ -11,37 +11,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('rxjs/Rx');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var cart_model_1 = require('../../../cart/ts/models/cart.model');
-var account_model_1 = require('../../../login/ts/models/account.model');
 var response_dto_model_1 = require('../../../data-transfer-objects/response-dto.model');
-var checkout_dto_model_1 = require('../../../data-transfer-objects/checkout-dto.model');
+var account_dto_model_1 = require('../../../data-transfer-objects/account-dto.model');
 var consts_1 = require('../../../consts');
-var CheckoutService = (function () {
-    function CheckoutService(http, cart, account) {
+var AccountCreatorService = (function () {
+    function AccountCreatorService(http) {
         this.http = http;
-        this.cart = cart;
-        this.account = account;
     }
-    CheckoutService.prototype.checkout = function () {
-        var checkoutDto = new checkout_dto_model_1.CheckoutDto();
-        checkoutDto.cart = this.cart;
-        checkoutDto.token = localStorage.getItem('auth_token');
-        checkoutDto.account = this.account;
-        var endpoint_url = consts_1.endpointUrl + 'checkout';
-        var body = JSON.stringify(checkoutDto);
+    AccountCreatorService.prototype.createAccount = function (account) {
+        var endpoint_url = consts_1.endpointUrl + 'createaccount';
+        var accountDto = this.mapAccount(account);
+        var body = JSON.stringify(accountDto);
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http.post(endpoint_url, body, options)
             .map(function (res) { return res.json(); })
-            .map(function (data) {
-            return response_dto_model_1.ResponseDto.fromJson(data);
-        });
+            .map(function (data) { return response_dto_model_1.ResponseDto.fromJson(data); });
     };
-    CheckoutService = __decorate([
+    AccountCreatorService.prototype.mapAccount = function (value) {
+        var accountDto = new account_dto_model_1.AccountDto();
+        accountDto.salutation = value.salutation;
+        accountDto.firstName = value.firstName;
+        accountDto.lastName = value.lastName;
+        accountDto.streetName = value.streetName;
+        accountDto.zipCode = value.zipCode;
+        accountDto.cityName = value.cityName;
+        accountDto.userName = value.userName;
+        accountDto.password = value.password;
+        return accountDto;
+    };
+    AccountCreatorService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, cart_model_1.Cart, account_model_1.Account])
-    ], CheckoutService);
-    return CheckoutService;
+        __metadata('design:paramtypes', [http_1.Http])
+    ], AccountCreatorService);
+    return AccountCreatorService;
 }());
-exports.CheckoutService = CheckoutService;
-//# sourceMappingURL=checkout.service.js.map
+exports.AccountCreatorService = AccountCreatorService;
+//# sourceMappingURL=account-creator.service.js.map
