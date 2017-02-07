@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/primeng';
+import { Router } from '@angular/router';
+import { AuthService } from './login/ts/services/auth.service';
+
 
 @Component({
   selector: 'pizzaconnection',
@@ -10,8 +13,8 @@ import { MenuItem } from 'primeng/primeng';
 export class AppComponent implements OnInit {
   private items: MenuItem[];
 
-  constructor() { 
-    localStorage.removeItem('auth_token');
+  constructor(private router: Router, private authService: AuthService) {
+    // localStorage.removeItem('auth_token');
   }
 
   ngOnInit() {
@@ -27,6 +30,18 @@ export class AppComponent implements OnInit {
         routerLink: ['cart']
       }
     ];
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  login() {
+    this.router.navigate(['login']);
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 }
 

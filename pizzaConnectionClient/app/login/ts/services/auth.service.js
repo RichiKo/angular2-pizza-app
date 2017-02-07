@@ -13,9 +13,15 @@ var http_1 = require('@angular/http');
 var user_auth_dto_model_1 = require('../../../data-transfer-objects/user-auth-dto.model');
 var user_dto_model_1 = require('../../../data-transfer-objects/user-dto.model');
 var consts_1 = require('../../../consts');
+var router_1 = require('@angular/router');
+var cart_model_1 = require('../../../cart/ts/models/cart.model');
+var account_model_1 = require('../models/account.model');
 var AuthService = (function () {
-    function AuthService(http) {
+    function AuthService(http, cart, account, router) {
         this.http = http;
+        this.cart = cart;
+        this.account = account;
+        this.router = router;
     }
     AuthService.prototype.login = function (email, passwd) {
         console.log('Try to login with Email: ' + email + ' AND password: ' + passwd);
@@ -34,9 +40,19 @@ var AuthService = (function () {
             }
         });
     };
+    AuthService.prototype.logout = function () {
+        localStorage.removeItem('auth_token');
+        this.cart.flush();
+        this.account.flush();
+        this.router.navigate(['']);
+    };
+    AuthService.prototype.isLoggedIn = function () {
+        var token = localStorage.getItem('auth_token');
+        return token != null && token.length > 0;
+    };
     AuthService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, cart_model_1.Cart, account_model_1.Account, router_1.Router])
     ], AuthService);
     return AuthService;
 }());

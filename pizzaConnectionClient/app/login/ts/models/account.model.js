@@ -4,6 +4,13 @@ var Account = (function () {
     }
     Account.prototype.validate = function (createNewAccount) {
         var val = true;
+        console.log(this._firstName);
+        console.log(this._lastName);
+        console.log(this._streetName);
+        console.log(this._streetName);
+        console.log(this._zipCode);
+        console.log(this._cityName);
+        console.log(this._salutation);
         if ((this._salutation !== 'Frau' && this._salutation !== 'Herr') ||
             (this.isEmpty(this._firstName)) ||
             (this.isEmpty(this._lastName)) ||

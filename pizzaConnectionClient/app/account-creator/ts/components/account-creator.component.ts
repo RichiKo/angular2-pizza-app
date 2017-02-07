@@ -38,8 +38,9 @@ export class AccountCreatorComponent {
   }
 
   creatAccount() {
+    console.log('validate', this.account.validate(this._createNewAccount));
     if (!this.account.validate(this._createNewAccount)) {
-      this.msgs.push({ severity: 'error', summary: 'Fehler!', detail: 'Bitte überprüfen Sie Ihre Eingabe!' });
+      this.msgs.push({ severity: 'error', summary: 'Fehler!', detail: '(createAccount)Bitte überprüfen Sie Ihre Eingabe!' });
     } else {
       this.accountService.createAccount(this.account).subscribe(res => {
         if (res.statusCode == 'OK') {

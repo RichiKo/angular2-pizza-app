@@ -9,8 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var cart_model_1 = require('../../../cart/ts/models/cart.model');
 var CheckoutComponent = (function () {
-    function CheckoutComponent() {
+    function CheckoutComponent(cart) {
+        this.cart = cart;
+        cart.flush();
     }
     CheckoutComponent = __decorate([
         core_1.Component({
@@ -18,7 +21,7 @@ var CheckoutComponent = (function () {
             templateUrl: 'app/checkout/templates/checkout.html',
             styleUrls: ['app/css/styles.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [cart_model_1.Cart])
     ], CheckoutComponent);
     return CheckoutComponent;
 }());

@@ -4,11 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import { UserAuthDto } from '../../../data-transfer-objects/user-auth-dto.model';
 import { UserDto } from '../../../data-transfer-objects/user-dto.model';
 import { endpointUrl } from '../../../consts';
+import { Router } from '@angular/router';
+import { Cart } from '../../../cart/ts/models/cart.model';
+import { Account } from '../models/account.model';
 
 
 @Injectable()
 export class AuthService {
-  constructor(private http: Http) {
+  constructor(private http: Http, private cart: Cart, private account: Account, private router: Router) {
   }
 
   login(email, passwd): Observable<UserDto> {
@@ -29,5 +32,17 @@ export class AuthService {
           console.log('Login erfolgreich: this.loggedIn =' + res._authToken.success);
         }
       })
+  }
+
+  logout() {
+    localStorage.removeItem('auth_token');
+    this.cart.flush();
+    this.account.flush();
+    this.router.navigate(['']);
+  }
+
+  isLoggedIn() {
+    let token: string = localStorage.getItem('auth_token');
+    return token != null && token.length > 0; 
   }
 }

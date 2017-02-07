@@ -16,13 +16,11 @@ export class CartComponent {
   }
 
   checkout() {
-    // this.checkoutService.checkout().subscribe(res => {
-    //   console.log('checkout:' + res.statusCode);
-    // });
-
-    // this.cart.flush();
-    this.router.navigate(['orderoption']);
-
+    if(localStorage.getItem('auth_token')=== null) {
+      this.router.navigate(['orderoption']);
+    } else {
+       this.router.navigate(['confirmation']);
+    }
   }
 
   get sumTotal(): number {

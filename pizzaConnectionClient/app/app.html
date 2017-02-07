@@ -2,12 +2,26 @@
 
 <head>
   <title>Pizza shop</title>
+  <meta charset="UTF-8">
+  <meta name="vierport" content="witdth=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <div class="height350"></div>
   <div class="container-fixed">
-    <p-menubar [model]="items"></p-menubar>
+    <div id="mLeft">
+      <p-menubar [model]="items" [style]="{'width':'680px'}"></p-menubar>
+    </div>
+    <template [ngIf]="isLoggedIn()">
+      <div id="mRight">
+        <button id="button" type="button" (click)="logout()" icon="fa-sign-out" pButton label="Logout"></button>
+      </div>
+    </template>
+    <template [ngIf]="!isLoggedIn()">
+      <div id="mRight">
+        <button id="button" type="button" (click)="login()" icon="fa-sign-in" pButton label="Login"></button>
+      </div>
+    </template>
   </div>
   <div class="height50"></div>
   <div class="container-fixed">

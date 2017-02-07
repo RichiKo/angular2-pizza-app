@@ -9,9 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var auth_service_1 = require('./login/ts/services/auth.service');
 var AppComponent = (function () {
-    function AppComponent() {
-        localStorage.removeItem('auth_token');
+    function AppComponent(router, authService) {
+        this.router = router;
+        this.authService = authService;
+        // localStorage.removeItem('auth_token');
     }
     AppComponent.prototype.ngOnInit = function () {
         this.items = [
@@ -27,13 +31,22 @@ var AppComponent = (function () {
             }
         ];
     };
+    AppComponent.prototype.logout = function () {
+        this.authService.logout();
+    };
+    AppComponent.prototype.login = function () {
+        this.router.navigate(['login']);
+    };
+    AppComponent.prototype.isLoggedIn = function () {
+        return this.authService.isLoggedIn();
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'pizzaconnection',
             templateUrl: 'app/app.html',
             styleUrls: ['app/css/styles.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router, auth_service_1.AuthService])
     ], AppComponent);
     return AppComponent;
 }());

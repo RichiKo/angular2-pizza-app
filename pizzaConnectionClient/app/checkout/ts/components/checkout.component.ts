@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cart } from '../../../cart/ts/models/cart.model';
 
 @Component({
   selector: 'checkout',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['app/css/styles.css']
 })
 
-export class CheckoutComponent { }
+export class CheckoutComponent {
+  constructor(private cart: Cart) {
+    cart.flush();
+  }
+}
