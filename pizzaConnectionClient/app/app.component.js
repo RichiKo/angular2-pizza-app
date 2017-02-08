@@ -28,6 +28,11 @@ var AppComponent = (function () {
                 label: 'Warenkorb',
                 icon: '',
                 routerLink: ['cart']
+            },
+            {
+                label: 'Verlauf',
+                icon: '',
+                routerLink: ['orderhistory']
             }
         ];
     };

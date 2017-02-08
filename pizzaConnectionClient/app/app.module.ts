@@ -24,6 +24,7 @@ import { OrderOptionComponent } from './order-option/ts/components/order-option.
 import { LoginComponent } from './login/ts/components/login.component';
 import { ConfirmationComponent } from './confirmation/ts/components/confirmation.component';
 import { AccountCreatorComponent } from './account-creator/ts/components/account-creator.component';
+import { OrderHistoryComponent } from './order-history/ts/components/order-history.component';
 
 // Servises
 import { PizzaListService } from './pizza/ts/services/pizzalist.service';
@@ -31,6 +32,7 @@ import { PizzaDetailService } from './pizza/ts/services/pizzadetail.service';
 import { CheckoutService } from './checkout/ts/services/checkout.service';
 import { AuthService } from './login/ts/services/auth.service';
 import { AccountCreatorService } from './account-creator/ts/services/account-creator.service';
+import { OrderHistoryService } from './order-history/ts/services/order-history.service';
 
 // ModelImpl
 import { Cart } from './cart/ts/models/cart.model';
@@ -61,7 +63,8 @@ import { Account } from './login/ts/models/account.model';
         OrderOptionComponent,
         LoginComponent,
         ConfirmationComponent,
-        AccountCreatorComponent
+        AccountCreatorComponent,
+        OrderHistoryComponent
     ],
     providers: [
         PizzaListService,
@@ -70,7 +73,8 @@ import { Account } from './login/ts/models/account.model';
         AuthService,
         AccountCreatorService,
         Cart,
-        Account
+        Account,
+        OrderHistoryService
 
     ],
     bootstrap: [AppComponent]

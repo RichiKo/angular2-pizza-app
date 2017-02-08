@@ -23,7 +23,6 @@ export class ConfirmationComponent {
   }
 
   get cart(): Cart {
-    console.log('CART', this._cart);
     return this._cart;
   }
 

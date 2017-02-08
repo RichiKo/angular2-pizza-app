@@ -6,6 +6,7 @@ import { OrderOptionRoutes } from './order-option/ts/routes/order-option.routes'
 import { LoginRoutes } from './login/ts/routes/login.routes';
 import { ConfirmationRoutes } from './confirmation/ts/routes/confirmation.routes';
 import { AccountCreatorRoutes } from './account-creator/ts/routes/account-creator.routes';
+import { OrderHistoryRoutes } from './order-history/ts/routes/order-history.routes';
 
 export const routes: Routes = [
   ...PizzaRoutes,
@@ -14,7 +15,8 @@ export const routes: Routes = [
   ...OrderOptionRoutes,
   ...LoginRoutes,
   ...ConfirmationRoutes,
-  ...AccountCreatorRoutes
+  ...AccountCreatorRoutes,
+  ...OrderHistoryRoutes
 ];
 
 export const routing = RouterModule.forRoot(routes, { useHash: true });

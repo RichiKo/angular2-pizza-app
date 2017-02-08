@@ -24,12 +24,14 @@ var order_option_component_1 = require('./order-option/ts/components/order-optio
 var login_component_1 = require('./login/ts/components/login.component');
 var confirmation_component_1 = require('./confirmation/ts/components/confirmation.component');
 var account_creator_component_1 = require('./account-creator/ts/components/account-creator.component');
+var order_history_component_1 = require('./order-history/ts/components/order-history.component');
 // Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
 var checkout_service_1 = require('./checkout/ts/services/checkout.service');
 var auth_service_1 = require('./login/ts/services/auth.service');
 var account_creator_service_1 = require('./account-creator/ts/services/account-creator.service');
+var order_history_service_1 = require('./order-history/ts/services/order-history.service');
 // ModelImpl
 var cart_model_1 = require('./cart/ts/models/cart.model');
 var account_model_1 = require('./login/ts/models/account.model');
@@ -62,7 +64,8 @@ var AppModule = (function () {
                 order_option_component_1.OrderOptionComponent,
                 login_component_1.LoginComponent,
                 confirmation_component_1.ConfirmationComponent,
-                account_creator_component_1.AccountCreatorComponent
+                account_creator_component_1.AccountCreatorComponent,
+                order_history_component_1.OrderHistoryComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,
@@ -71,7 +74,8 @@ var AppModule = (function () {
                 auth_service_1.AuthService,
                 account_creator_service_1.AccountCreatorService,
                 cart_model_1.Cart,
-                account_model_1.Account
+                account_model_1.Account,
+                order_history_service_1.OrderHistoryService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

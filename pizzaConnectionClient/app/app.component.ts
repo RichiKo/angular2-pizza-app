@@ -28,6 +28,11 @@ export class AppComponent implements OnInit {
         label: 'Warenkorb',
         icon: '',
         routerLink: ['cart']
+      },
+      {
+        label: 'Verlauf',
+        icon: '',
+        routerLink: ['orderhistory']
       }
     ];
   }

@@ -30,7 +30,6 @@ var ConfirmationComponent = (function () {
     });
     Object.defineProperty(ConfirmationComponent.prototype, "cart", {
         get: function () {
-            console.log('CART', this._cart);
             return this._cart;
         },
         enumerable: true,
