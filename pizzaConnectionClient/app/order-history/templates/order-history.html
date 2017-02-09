@@ -1,0 +1,16 @@
+<template [ngIf]="hasContent">
+  <p-panel header="Ihre Bestellungen im Überblick">
+    <p-dataTable [value]="historyList">
+      <p-column field="date" header="Datum"></p-column>
+      <p-column field="cartItem._name" header="Artikel"></p-column>
+      <p-column field="cartItem._amount" header="Anzahl"></p-column>
+    </p-dataTable>
+  </p-panel>
+</template>
+<template [ngIf]="!hasContent">
+  <p-panel header="Ihre Bestellungen im Überblick">
+    <div class="height150"></div>
+    <div class="centered">Bisher liegen keine Bestellungen zu Ihrer Kunedennummer vor</div>
+    <div class="height150"></div>
+  </p-panel>
+</template>
