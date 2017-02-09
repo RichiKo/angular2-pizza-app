@@ -12,8 +12,12 @@ import {
     GrowlModule,
     DataTableModule,
     DropdownModule } from 'primeng/primeng';
+
+//Routing    
 import { routing } from './app.routes';
 
+//Pipes
+import {PipesModule} from './pipes/pipes.module';
 // Components
 import { AppComponent } from './app.component';
 import { PizzaListComponent } from './pizza/ts/components/pizzalist.component';
@@ -53,7 +57,8 @@ import { Account } from './login/ts/models/account.model';
         DataListModule,
         GrowlModule,
         DataTableModule,
-        DropdownModule
+        DropdownModule,
+        PipesModule
     ],
     declarations: [
         AppComponent,

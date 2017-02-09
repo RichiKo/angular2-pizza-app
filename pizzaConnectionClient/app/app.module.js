@@ -13,7 +13,10 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
+//Routing    
 var app_routes_1 = require('./app.routes');
+//Pipes
+var pipes_module_1 = require('./pipes/pipes.module');
 // Components
 var app_component_1 = require('./app.component');
 var pizzalist_component_1 = require('./pizza/ts/components/pizzalist.component');
@@ -54,7 +57,8 @@ var AppModule = (function () {
                 primeng_1.DataListModule,
                 primeng_1.GrowlModule,
                 primeng_1.DataTableModule,
-                primeng_1.DropdownModule
+                primeng_1.DropdownModule,
+                pipes_module_1.PipesModule
             ],
             declarations: [
                 app_component_1.AppComponent,

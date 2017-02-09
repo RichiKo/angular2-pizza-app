@@ -30,11 +30,15 @@
                     </td>
                   </tr>
                   <tr>
+                    <td>Einzelpreis:</td>
+                    <td class="rightaligned-w60">{{item.price|currency}}</td>
+                  </tr>
+                  <tr>
                     <td>
                       <b>Zwishensumme:</b>
                     </td>
                     <td class="rightaligned-w60">
-                      <b>{{item.subTotal.toFixed(2)}} €</b>
+                      <b>{{item.subTotal.toFixed(2) | currency}} </b>
                     </td>
                   </tr>
                 </table>
@@ -48,7 +52,7 @@
       <button type="button" (click)="checkout()" icon="fa-close" label="Weiter" pButton></button>
     </div>
     <div id="dRight" class="rightAligned paddingTop-15">
-      <b>Gesamtsumme: {{sumTotal.toFixed(2)}} €</b><br>
+      <b>Gesamtsumme: {{sumTotal.toFixed(2)| currency}} </b><br>
       <span class="fontSize-12">inkl. 7% MwSt & Lieferung </span>
     </div>
   </p-panel>
