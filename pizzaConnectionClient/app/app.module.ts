@@ -25,6 +25,7 @@ import { LoginComponent } from './login/ts/components/login.component';
 import { ConfirmationComponent } from './confirmation/ts/components/confirmation.component';
 import { AccountCreatorComponent } from './account-creator/ts/components/account-creator.component';
 import { OrderHistoryComponent } from './order-history/ts/components/order-history.component';
+import { Bouncer } from './login/ts/components/bouncer.component';
 
 // Servises
 import { PizzaListService } from './pizza/ts/services/pizzalist.service';
@@ -74,7 +75,8 @@ import { Account } from './login/ts/models/account.model';
         AccountCreatorService,
         Cart,
         Account,
-        OrderHistoryService
+        OrderHistoryService,
+        Bouncer
 
     ],
     bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Message } from 'primeng/primeng';
 import { AuthService } from '../services/auth.service';
 import { Account } from '../models/account.model';
@@ -16,11 +16,17 @@ export class LoginComponent {
   private passwd: string;
   msgs: Message[] = [];
 
-  constructor(private authService: AuthService, private router: Router, private account: Account) {
+  constructor(private authService: AuthService, private router: Router, private account: Account, private activatedRouter: ActivatedRoute) {
   }
 
   login() {
     console.log('Trying to login with user' + this.email);
+    let forward = '';
+    console.log('snapshot', this.activatedRouter.snapshot.params['fw']);
+    if (this.activatedRouter.snapshot.params['fw']) {
+      forward = this.activatedRouter.snapshot.params['fw'];
+      console.log('fw', forward);
+    }
     this.authService.login(this.email, this.passwd)
       .subscribe((result) => {
         if (result.authToken.success === true) {
@@ -32,7 +38,7 @@ export class LoginComponent {
           this.account.zipCode = result.zipCode;
           this.account.cityName = result.cityName;
 
-          this.router.navigate(['confirmation']);
+          this.router.navigate([forward]);
         } else {
           this.msgs.push({
             severity: 'error',

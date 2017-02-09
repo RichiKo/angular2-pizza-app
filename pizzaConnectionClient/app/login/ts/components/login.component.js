@@ -13,15 +13,22 @@ var router_1 = require('@angular/router');
 var auth_service_1 = require('../services/auth.service');
 var account_model_1 = require('../models/account.model');
 var LoginComponent = (function () {
-    function LoginComponent(authService, router, account) {
+    function LoginComponent(authService, router, account, activatedRouter) {
         this.authService = authService;
         this.router = router;
         this.account = account;
+        this.activatedRouter = activatedRouter;
         this.msgs = [];
     }
     LoginComponent.prototype.login = function () {
         var _this = this;
         console.log('Trying to login with user' + this.email);
+        var forward = '';
+        console.log('snapshot', this.activatedRouter.snapshot.params['fw']);
+        if (this.activatedRouter.snapshot.params['fw']) {
+            forward = this.activatedRouter.snapshot.params['fw'];
+            console.log('fw', forward);
+        }
         this.authService.login(this.email, this.passwd)
             .subscribe(function (result) {
             if (result.authToken.success === true) {
@@ -32,7 +39,7 @@ var LoginComponent = (function () {
                 _this.account.streetName = result.streetName;
                 _this.account.zipCode = result.zipCode;
                 _this.account.cityName = result.cityName;
-                _this.router.navigate(['confirmation']);
+                _this.router.navigate([forward]);
             }
             else {
                 _this.msgs.push({
@@ -49,7 +56,7 @@ var LoginComponent = (function () {
             templateUrl: 'app/login/templates/login.html',
             styleUrls: ['app/css/styles.css']
         }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService, router_1.Router, account_model_1.Account])
+        __metadata('design:paramtypes', [auth_service_1.AuthService, router_1.Router, account_model_1.Account, router_1.ActivatedRoute])
     ], LoginComponent);
     return LoginComponent;
 }());

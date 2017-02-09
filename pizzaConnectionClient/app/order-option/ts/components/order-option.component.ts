@@ -17,7 +17,7 @@ export class OrderOptionComponent {
   }
 
   login() {
-    this.router.navigate(['login']);
+    this.router.navigate(['login', 'confirmation']);
   }
 
   createAccount() {

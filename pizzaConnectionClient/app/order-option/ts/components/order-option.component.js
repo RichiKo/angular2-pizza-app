@@ -18,7 +18,7 @@ var OrderOptionComponent = (function () {
         this.router.navigate(['accountcreator', false]);
     };
     OrderOptionComponent.prototype.login = function () {
-        this.router.navigate(['login']);
+        this.router.navigate(['login', 'confirmation']);
     };
     OrderOptionComponent.prototype.createAccount = function () {
         this.router.navigate(['accountcreator', true]);
