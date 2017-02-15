@@ -11,7 +11,8 @@ import {
     DataListModule,
     GrowlModule,
     DataTableModule,
-    DropdownModule } from 'primeng/primeng';
+    DropdownModule
+ } from 'primeng/primeng';
 
 //Routing    
 import { routing } from './app.routes';
@@ -30,6 +31,7 @@ import { ConfirmationComponent } from './confirmation/ts/components/confirmation
 import { AccountCreatorComponent } from './account-creator/ts/components/account-creator.component';
 import { OrderHistoryComponent } from './order-history/ts/components/order-history.component';
 import { Bouncer } from './login/ts/components/bouncer.component';
+import { FilterComponent } from './filter/ts/components/filter.component';
 
 // Servises
 import { PizzaListService } from './pizza/ts/services/pizzalist.service';
@@ -42,6 +44,7 @@ import { OrderHistoryService } from './order-history/ts/services/order-history.s
 // ModelImpl
 import { Cart } from './cart/ts/models/cart.model';
 import { Account } from './login/ts/models/account.model';
+import { FilterModel } from './filter/ts/models/filter.model';
 
 @NgModule({
     imports: [
@@ -70,7 +73,8 @@ import { Account } from './login/ts/models/account.model';
         LoginComponent,
         ConfirmationComponent,
         AccountCreatorComponent,
-        OrderHistoryComponent
+        OrderHistoryComponent,
+        FilterComponent
     ],
     providers: [
         PizzaListService,
@@ -81,7 +85,8 @@ import { Account } from './login/ts/models/account.model';
         Cart,
         Account,
         OrderHistoryService,
-        Bouncer
+        Bouncer,
+        FilterModel
 
     ],
     bootstrap: [AppComponent]

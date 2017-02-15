@@ -1,0 +1,8 @@
+<div>
+  <p-dropdown 
+    [options]="model.pizzaTypeSelectionList" 
+    [(ngModel)]="model.pizzaTypeSelectionType" 
+    [style]="{'width':'120px'}" 
+    (onChange)="typeSelected($event)">
+  </p-dropdown>
+</div>

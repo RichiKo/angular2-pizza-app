@@ -11,15 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var pizzalist_service_1 = require('../services/pizzalist.service');
+var filter_model_1 = require('../../../filter/ts/models/filter.model');
 var PizzaListComponent = (function () {
     function PizzaListComponent(_pizzaService, router) {
-        var _this = this;
         this._pizzaService = _pizzaService;
         this.router = router;
-        this._pizzaService.getPizzaList().subscribe(function (res) {
+        this.model = new filter_model_1.FilterModel();
+        this.getFilteredSelectionList();
+    }
+    PizzaListComponent.prototype.ngOnInit = function () {
+    };
+    PizzaListComponent.prototype.getFilteredSelectionList = function () {
+        var _this = this;
+        console.log('model');
+        this._pizzaService.getPizzaList(this.model.pizzaTypeSelectionType).subscribe(function (res) {
             _this.pizzaList = res;
         });
-    }
+    };
     PizzaListComponent.prototype.getPizzaList = function () {
         return this.pizzaList;
     };

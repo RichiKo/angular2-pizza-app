@@ -1,3 +1,4 @@
+<filter [model]="model" (doFilter)="getFilteredSelectionList($event)"></filter>
 <p-dataGrid [value]="getPizzaList()" [columns]="3" [paginator]="true" [rows]="9">
   <template let-pizza>
     <div class="padding-3">

@@ -29,6 +29,7 @@ var confirmation_component_1 = require('./confirmation/ts/components/confirmatio
 var account_creator_component_1 = require('./account-creator/ts/components/account-creator.component');
 var order_history_component_1 = require('./order-history/ts/components/order-history.component');
 var bouncer_component_1 = require('./login/ts/components/bouncer.component');
+var filter_component_1 = require('./filter/ts/components/filter.component');
 // Servises
 var pizzalist_service_1 = require('./pizza/ts/services/pizzalist.service');
 var pizzadetail_service_1 = require('./pizza/ts/services/pizzadetail.service');
@@ -39,6 +40,7 @@ var order_history_service_1 = require('./order-history/ts/services/order-history
 // ModelImpl
 var cart_model_1 = require('./cart/ts/models/cart.model');
 var account_model_1 = require('./login/ts/models/account.model');
+var filter_model_1 = require('./filter/ts/models/filter.model');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -70,7 +72,8 @@ var AppModule = (function () {
                 login_component_1.LoginComponent,
                 confirmation_component_1.ConfirmationComponent,
                 account_creator_component_1.AccountCreatorComponent,
-                order_history_component_1.OrderHistoryComponent
+                order_history_component_1.OrderHistoryComponent,
+                filter_component_1.FilterComponent
             ],
             providers: [
                 pizzalist_service_1.PizzaListService,
@@ -81,7 +84,8 @@ var AppModule = (function () {
                 cart_model_1.Cart,
                 account_model_1.Account,
                 order_history_service_1.OrderHistoryService,
-                bouncer_component_1.Bouncer
+                bouncer_component_1.Bouncer,
+                filter_model_1.FilterModel
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

@@ -17,8 +17,8 @@ var PizzaListService = (function () {
     function PizzaListService(http) {
         this.http = http;
     }
-    PizzaListService.prototype.getPizzaList = function () {
-        var endpoint_url = consts_1.endpointUrl + 'pizzalist';
+    PizzaListService.prototype.getPizzaList = function (pizzaType) {
+        var endpoint_url = consts_1.endpointUrl + 'pizzalist?pizzaType=' + pizzaType;
         return this.http
             .get(endpoint_url, { method: 'Get' })
             .map(function (responseData) {

@@ -10,8 +10,8 @@ export class PizzaListService {
   constructor(private http: Http) {
 
   }
-  getPizzaList(): Observable<Array<Pizza>> {
-    let endpoint_url: string = endpointUrl + 'pizzalist'
+  getPizzaList(pizzaType: string): Observable<Array<Pizza>> {
+    let endpoint_url: string = endpointUrl + 'pizzalist?pizzaType=' + pizzaType
     return this.http
       .get(endpoint_url, { method: 'Get' })
       .map((responseData) => {
